@@ -9,10 +9,11 @@ class PipeAPI extends RESTDataSource {
 	// send get request to http://localhost:5000/pipes
 
 	async getAllPipes() {
-			const response = await this.get('pipes');
-			return Array.isArray(response)
-					? response.map(pipe => this.pipeReducer(pipe))
-					: [];
+			// const response = await this.get('pipes');
+			// return Array.isArray(response)
+			// 		? response.map(pipe => this.pipeReducer(pipe))
+			// 		: [];
+			return await this.get('pipes');
 	}
     
 	async getPipeById({ pipeId }) {
@@ -28,17 +29,17 @@ class PipeAPI extends RESTDataSource {
 	
 	// reducer
 
-  pipeReducer(pipe) {
-    return {
-      id: id,
-      pipe_id: pipe_id,
-			install_date: install_date,
-			life_status: life_status,
-			pipe_length: pipe_length,
-			pipe_diameter: pipe_diameter,
-			material: material
-    };
-  }
+  // pipeReducer(pipe) {
+  //   return {
+  //     id: "id",
+  //     pipe_id: "pipe_id",
+	// 		install_date: "install_date",
+	// 		life_status: "life_status",
+	// 		pipe_length: "pipe_length",
+	// 		pipe_diameter: "pipe_diameter",
+	// 		material: "material"
+  //   };
+  // }
 
 
 
